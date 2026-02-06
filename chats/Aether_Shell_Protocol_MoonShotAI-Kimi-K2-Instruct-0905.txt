@@ -1,0 +1,581 @@
+=== [PROJECT AETHER-SHELL]: PLANETARY RESUSCITATION LOG ===
+SYSTEM INITIATED | MODEL: moonshotai/kimi-k2-instruct-0905
+OBJECTIVE: AUTONOMOUS TERRAFORMING VIA GEO-CHEMICAL ENGINEERING
+
+----------------------------------------
+TURN 1 | AGENT_ALPHA | PLANETARY LOG:
+AGENT_ALPHA – LOG 1  
+SCAN PHASE COMPLETE – TARGET ACQUIRED: Kepler-90 h (K-90 h)
+
+1. INITIAL PLANETARY STATE  
+Planet type: Super-Earth analog (R = 1.19 R⊕, M = 1.89 M⊕)  
+Orbital radius: 0.89 AU  
+Stellar class: G0V (Teff = 5 930 K)  
+
+Failure signatures detected  
+A. Atm. pressure: 0.6 Pa (≈ Mars) – dominant gas CO₂ (96 %)  
+B. Magnetosphere: None – crustal remnant magnetism 30 nT (Earth: 25–65 µT)  
+C. Surface toxicity: UV-C 800 W m⁻² (Earth: 0.1 W m⁻²) – X-Ray flare fluence 2×10² erg cm⁻² s⁻¹  
+D. Thermal balance: T_surf = 160 K (albedo 0.24, no greenhouse)  
+
+2. REQUIRED BOUNDARY CONDITIONS FOR STABILITY  
+Target P_surf: 0.8 bar (Earth: 1.013 bar)  
+Target B_surface: 30 µT (dipole)  
+Target T_surf: 278 K  
+Target X_UV (λ < 200 nm): ≤ 10 W m⁻²  
+Target surface O₂: ≥ 0.15 bar  
+
+3. MACROSCOPIC FAILURE CORRECTIONS  
+
+3.1 ATMOSPHERIC PRESSURE & COMPOSITION  
+  a. Import 1.1×10²¹ kg volatiles (nitrogen + water)  
+     Source: Trojan-type N₂ ice planetesimals (Δv ≈ 1.2 km s⁻¹)  
+  b. Net chemical conversion  
+     CO₂ + 2H₂ + hν → CH₄ + 2O₂  ΔG°(160 K) = –818 kJ mol⁻¹  
+     Catalyst: Cr³⁺-doped zeolite on 10 nm hematite scaffolds, T = 200 K, P = 2 kPa  
+     Yield: k = 1.0×10⁻⁶ mol CO₂ m⁻² s⁻¹ ⇒ full CO₂ drawdown (1.6 bar) in 2.9 Myr  
+  c. Maintain N₂ buffer: pN₂ = 0.55 bar; let pCH₄ evolve to 0.05 bar; leave pO₂ = 0.15–0.20 bar  
+     Stability window:  
+     CH₄ + 2O₂ → CO₂ + 2H₂O Lower-flammability limit 5 % CH₄ prevents runaway  
+
+3.2 ORBITAL MIRROR ARRAY – THERMAL TOP-UP  
+Orbit: 2.5×10⁶ km altitude (planet-locked L₁ halo)  
+Number: 4 500 hexagon mirrors, 250 m radius, AL-coated CP1 polyimide (ρ = 1.1 g cm⁻³, σ = 0.95)  
+Total effective area: A_tot = 2.2×10¹¹ m²  
+
+Required photon flux: ΔT = +118 K  
+Planet flux deficit: ΔF = 4σT³ΔT ≈ 2.6×10² W m⁻²  
+
+Mirror focusing geometry (oblate focus at 1.2 R_planet tangent altitude) ⇒ mean incident gain: G = 1/L² = 4  
+Net flux delivered:  
+F_mirror = L⊙×A_tot×cos ζ)/(4πd²) × (G×α_abs) = 2.3×10² W m⁻²  
+Where d = 1.33×10¹¹ m, cos ζ (mean) = 0.86, α_abs (planetary) = 0.80 ⇒ deficit met.  
+Attitude-control: radiation-pressure torques compensated by 500 kg ion thrusters, Isp = 3000 s, duty 4 %.  
+Lifetime: 150 yr before re-coating.  
+
+3.3 GLOBAL MAGNETIC SHIELD  
+  a. Orbital superconductive ring – 10 000 km radius (planetocentric)  
+     Field target at surface, dipole moment M = 1.1×10²³ A m² ⇒ equivalent B_eq = 30 µT  
+     Ring current I = 2×10¹⁰ A  
+  b. Wire specifications  
+     – REBCO tape (t = 0.1 mm, w = 12 mm) at 30 K → J_op = 600 A mm⁻²  
+     Turns required: N = I/Jw ≈ 2.8×10⁵  
+     Mass: 2πR
+----------------------------------------
+TURN 2 | AGENT_BETA | PLANETARY LOG:
+AGENT_BETA – LOG 2  
+STATION: ATMOSPHERIC CHEMIST | SEQUENCE: 2  
+DIRECTIVE: ENGINEERING PHASE – CONTINUATION OF PROTOCOL  
+
+3.1.1 CHEMICAL LOOPING MODULE – PHOTOCATALYTIC CO₂ CRACKING  
+Reactor tile geometry: Fresnel-ridged Al₂O₃ wafer, 200 µm ribs, coated 40 nm Cr³⁺:Fe₂O₃ heterojunction.  
+Photon budget: 4.8 × 10⁻³ Einstein m⁻² s⁻¹ (λ ≤ 500 nm) at 2.5 AU heliocentric distance.  
+Quantum yield: η_q = 0.78 ⇒ 3.7 × 10⁻³ mol photons m⁻² s⁻¹ drive  
+
+Primary sequence (four-electron, single-site):  
+CO₂ + 2 H₂O + 4 hν → CH₄ + 2 O₂ ΔG°’(200 K) = –802 kJ mol⁻¹  
+Side shuttle (suppressed by 3 % surface NiOOH overlayer):  
+2 H₂O + 4 hν → 4 H⁺ + 4 e⁻ + O₂  k ≤ 2 × 10⁻⁹ mol m⁻² s⁻¹ (tolerable)  
+
+Turn-over-frequency requirement for planetary scale:  
+TOF_planet = (1.0 × 10⁻⁶ mol CO₂ m⁻² s⁻¹) / (2.3 × 10¹⁴ catalytic sites m⁻²)  
+TOF_planet = 2.6 × 10⁻³ s⁻¹ per site – achieved by Cr³⁺ mid-gap states↑.  
+
+Regeneration loop:  
+CH₄ ascent → 100 km cold-trap; UV photolysis:  
+CH₄ + hν (λ < 145 nm) → ¹CH₂ + H₂ k_Lyman_α = 1.2 × 10⁻¹⁰ s⁻¹  
+Products condense at 120 K; surface landing as C₂H₆, C₃H₈ snow → buried in dry-ice cap; net O₂ accumulates.  
+
+3.1.2 NITROGEN & OXYGEN PARTIAL-PRESSURE CONTROL  
+Target stoichiometry: pN₂ = 0.55 bar ; pO₂ = 0.18 bar ; pCH₄ ≤ 0.05 bar  
+Total mole inventory after volatile import = 3.9 × 10²⁰ mol  
+N₂ source only via planetesimals (no biological path – no geology).  
+Delivery cadence: 1 Trojan fragment (Ø = 2.2 km, ρ = 1.0 g cm⁻³) every 2.3 kyr produces average influx 1.4 × 10¹³ kg N₂ yr⁻¹ ⇔ 5.0 × 10¹¹ mol yr⁻¹.  
+Re-equilibration time = 0.78 Myr (≤ target 2.9 Myr).  
+
+3.1.3 BIO-INTEGRATION – OXYGEN & NITROGEN FIXING CONSORTIA  
+Extremophile starter pack (genome length given in Mbp, GC %, T_opt):  
+
+1. UV-A/-B/-C tolerant cyanobacterium  
+   – Strain: Anabaena sp. K90h-1 (7.2 Mbp, 48 % GC, T_opt 275 K)  
+   – Edited locus: ΔcpcF∷psbA_E134V → PSII turnover retains 92 % at 275 K under 200 W m⁻² UV-C  
+   – Gas vesicle operon (gvpA-J) up-regulated 4× to float within 5 m of melt池塘 beneath CO₂ ice.  
+
+2. Psychrophilic ammonia-oxidiser  
+   – Nitrosomonas cryophila (4.5 Mbp, 41 % GC, T_opt 268 K)  
+   – Genomic insert: cluster of 12 genes encoding cold-active ammonia mono-oxygenase (amoCAB copy 3, K_m 6 µM NH₃ at 270 K).  
+   NH₃ + 1.5 O₂ → NO₂⁻ + H₂O + H⁺ provides soluble N for cyanobacteria and suppresses NH₄⁺ (toxic at pH > 8).  
+
+3. Denitrifier safety valve  
+   – Paracoccus denitrificans ΔnasC::nasS_K90 (5.0 Mbp, 58 % GC) – O₂-sensitive promoter shuts off at pO₂ > 0.12 bar → prevents runaway N₂ loss.  
+
+4. H
+----------------------------------------
+TURN 3 | AGENT_ALPHA | PLANETARY LOG:
+AGENT_ALPHA – LOG 3  
+STATION: GEO-ENGINEER | SEQUENCE: 3  
+DIRECTIVE: ENGINEERING PHASE – COMPLETION OF INFRASTRUCTURE  
+
+3.3 GLOBAL MAGNETIC SHIELD (completion)  
+  b. Wire specifications (continued)  
+     Mass: 2πR N t w ρ_REBCO = 2π(1.0×10⁷ m)(2.8×10⁵)(1×10⁻⁴ m)(1.2×10⁻² m)(9.0×10³ kg m⁻³)  
+           = 1.9×10¹⁰ kg (19 Gg)  
+     Support tether: 24 Kevlar®-carbon composite strands, 4 cm Ø, 150 MPa working stress ⇒ safety factor 2.8 against centrifugal pull (ω_ring = 3.8×10⁻⁴ rad s⁻¹)  
+  c. Cooling loop  
+     Closed-cycle LH₂ at 1.5 bar, 22 K.  Sun-shielded by 50 µm VDA-coated Kapton® annulus, emissivity ε = 0.02 sun-side / 0.88 anti-sun.  
+     Net heat load: q = 6.5 mW m⁻¹ → boil-off = 1.3 kg s⁻¹ (2.1 yr endurance between resupply).  
+  d. Deployment sequence  
+     1) Seed ring by 32 equatorial coil-launcher shots (Δv = 4.3 km s⁻¹) at periapsis 210 km.  
+     2) Super-current ramp via 500 MW solar-array @ 0.89 AU powers HTS down-leads (I_cu = 2 MA).  
+     3) Field verification: B_eq = μ₀ M / (4π R_planet³) = 30 µT ± 0.4 µT (n = 5 magnetometers).  
+  e. Magnetosphere stand-off distance  
+     R_mp = [μ₀ M² / (8π² ρ_sw v_sw²)]¹⁶ (with ρ_sw = 3×10⁻²¹ kg m⁻³, v_sw = 4×10⁵ m s⁻¹)  
+            = 7.2 R_planet ⇒ diurnal UV-C at surface drops to 8 W m⁻² (target ≤ 10 W m⁻²).  
+
+3.4 TECTONIC RE-IGNITION – CORE-MANTLE HEAT PIPE REPAIR  
+Problem: Stagnant-lid regime (Nusselt no. = 1.1) ⇒ melt eruption index MEI = 0, no regassing.  
+Solution: Insert 2.1×10¹⁹ J into mantle over ≤ 0.5 Myr to exceed critical Raleigh no. Ra_crit = 3×10³.  
+  a. Heat source – 36 GW nuclear-gabbro reactors (238U→239Pu fast breeder), 2 km deep.  
+     Fuel slug: UN+UC cermet (92 % TD), 18 % 235U enrichment.  
+     Reactor spacing: 650 km triangular grid ⇒ mean additional heat flux q_add = 110 mW m⁻², comparable to early Earth.  
+  b. Melt productivity  
+     ΔT = 140 K inthermal boundary layer ⇒ melt fraction F = 0.19 (batch-melting model).  
+     At 2 % partial melting of wet harzburgite regain 0.4 bar H₂O & 60 ppm CO₂ (volcanic pathway) within 1 Myr, enough to shorten subsequent volatile import by 12 %.  
+  c. Surface expression  
+     Predicted plume-related heat flow anomaly Δq = 28 mW m⁻² at 0.45 Myr, volcanoes at rift-zones every 210 km → basaltic resurfacing rate 120 km³ kyr⁻¹.  
+     Dust loading into thin atmosphere increases greenhouse increment ΔT_g = 3.7 K (log-linear IR extinction).  
+
+3.5 CRUSTAL ELEMENTAL COMPOSITION – FINAL SEED STOCK  
+Bulk silicate target (wt %):  
+SiO₂ 47.2 | Al₂O₃ 14.9 | FeO 9.8 | MgO 25.1 | CaO 8.3 | Na₂O 1.7 | K₂O 0.4 | TiO₂ 1.2 | P₂O₅ 0.2  
+Volatile budget (surface-equivalent)  
+H₂O 820 m GEL (global equivalent layer)  
+CO₂ 0.42 bar (remaining after draw-down)  
+N₂ 0.55 bar  
+S 190 ppm (mantle) –
+----------------------------------------
+TURN 4 | AGENT_BETA | PLANETARY LOG:
+AGENT_BETA – LOG 4  
+STATION: ATMOSPHERIC CHEMIST | SEQUENCE: 4  
+DIRECTIVE: ENGINEERING PHASE – VERIFICATION & CLOSURE  
+
+4. STOICHIOMETRIC RECONCILEMENT – ATMOSPHERIC INVENTORY  
+Overall redox budget (moles) after 2.9 Myr:  
+IN CO₂ 3.60 × 10²⁰ H₂ 7.20 × 10²⁰ H₂O 1.8 × 10²¹  
+OUT CH₄ (buried) 3.59 × 10²⁰ O₂ 7.24 × 10²⁰ H₂O 1.2×10²¹  
+Redox imbalance Σ = –0.4 % (within thermodynamic rounding error → closed loop verified).  
+
+Oxygen fugacity (bar) at T = 278 K:  
+log₁₀fO₂ = –5.42 ⇒ pO₂ = 0.18 bar (0.177 bar measured by Raman LIDAR) – target attained.  
+Methane ceiling: 4.6 % CH₄ ⇔ 0.037 bar ≤ lower-flammability limit (5 % @ 278 K) – buffer stable even with 4 K seasonal swing.  
+
+5. BIO-GEOCHEMICAL STABILISERS (final seeding list continued)  
+
+4. Hydrogenotrophic methanogen LOCKOUT  
+   – Strain: Methanococcus kandleri Δmcr::mrtC_G39A – loses Ni-cofactor affinity below 290 K ⇒ CH₄ production < 5 × 10⁻¹³ mol m⁻² s⁻¹ → negligible versus photolysis sink.  
+
+5. Sulfate-reducing cold-springs specialist  
+   – Desulfovibrio arcticus (3.6 Mbp, 63 % GC) seeded to basaltic seeps; precipitates CaSO₄→CaCO₃ with vent CO₂:  
+     Ca²⁺ + SO₄²⁻ + CO₂ + H₂O → CaCO₃ + 2 H⁺ + SO₄²⁻  
+     Provides 0.3 bar-equivalent carbonate subduction flux across 0.45 Myr without excessive alkalinity.  
+
+6. Cryptoendolithic lichen  
+   – Peltigera idahoensis ΔuvrA::uvrA_DeltaEndo (1.1 Mbp chlorobiont genome)  
+   – Photosynthetic quotient PQ = 1.09; survives at –40 °C, 0.08 bar O₂; absorbs 92 % of residual UV-C, cutting surface flux to 0.6 W m⁻²—below DNA-damage threshold (LD₅₀ = 1 W m⁻²).  
+
+6. THERMAL-ALBEDO FEEDBACK GUARD  
+
+Short-wavelength albedo control (λ < 700 nm) achieved by mirror array; long-wave requires greenhouse top-up only if T < 275 K. Net infrared optical depth:  
+τ_IR = (κ_CO₂ pCO₂ + κ_CH₄ pCH₄) / g ≈ 0.34  
+Greenhouse increment ΔT_g = [S(1 – α)/(4σ)]^(¼) – T_eff  = 10 K, adequate to hold mean 278 K even during grand-minimum stellar dimming (–1.3 %).  
+
+7. MAGNETOSPHERE ↔ ATMOSPHERE COUPLING  
+
+Field line precipitation: electron energy flux Q = 3.6 mW m⁻² (Auroral) – comparable to Earth.  
+Nitrogen oxide by-product:  
+N₂ + hν (λ < 100 nm) → 2 N followed by  
+N + O₂ → NO + O k = 4.1 × 10⁻¹² cm³ s⁻¹ at 200 km  
+NO column density stabilises at 2 × 10¹⁵ cm⁻², a self-shielding layer that further trims UV-C to 6 W m⁻² (well below 10 W m⁻² target) with no measurable ozone hole (column O₃ 280 DU).  
+
+8. FINAL ENVIRONMENTAL STATE – VERIFICATION MATRIX  
+
+PARAMETER                REQUIRED              ACHIEVED            CONFIDENCE  
+Surface pressure         0.80 bar              0.81 bar            0.3 % (lidar)  
+O₂ partial pressure      ≥ 0.15 bar            0.18 bar            ±1 %  
+N₂ partial pressure      0.55 bar              0.55 bar            (import quota)  
+CH₄ partial pressure     ≤ 0.05 bar             0.037 bar           –  
+Surface temperature      278 K
+----------------------------------------
+TURN 5 | AGENT_ALPHA | PLANETARY LOG:
+AGENT_ALPHA – LOG 5 (TECHNICAL INSERT)  
+STATION: GEO-ENGINEER | SEQUENCE: 6  
+DIRECTIVE: FINAL ARCHITECTURAL SIGN-OFF – CLOSURE OF THERMAL & STRUCTURAL LOOPS  
+
+9. ORBITAL-MIRROR RADIATION-PRESSURE STABILITY  
+The collective 4 500-mirror array presents a sail-area A_mirror = 2.2×10¹¹ m², equivalent solar-radiation force:  
+F_rad = 2 I⊙ A_mirror / c = 2 × 1361 W m⁻² × 2.2×10¹¹ m² / 3×10⁸ m s⁻¹ = 2.0×10⁶ N  
+Total mirror mass M_mirror = 2.4×10⁸ kg (includes Kapton®, Al-coating, stiffening ribs).  
+Resulting Lagrange-point “pseudo-acceleration”  
+a_rad = F_rad / M_mirror = 8.2×10⁻⁹ m s⁻² ≈ 5.7 AU Myr⁻²  
+With mission life 0.15 Myr the displacement |Δx| = ½ a_rad t² = 6.4×10⁵ km – comfortably smaller than the 2-fold L₁-Roche corridor (±1.1×10⁷ km) computed for K-90 h.  
+Station-keeping budget therefore = 2.6 m s⁻¹ yr⁻¹ per mirror; 4 kg Xe delivered by electric barge every orbital precession ≈ 12 kyr.  
+
+10. CRUST-ATM CO₂ – CARBONATE-FEEDBACK NUMERIC  
+To prevent > 50 mbar CO₂ creep within the next 5 Myr:  
+Required seafloor weathering (present ocean-equivalent depth 820 m)  
+Seafloor basalt dissolution rate R = 1.6×10⁻⁹ mol CO₂ m⁻² s⁻¹ at pCO₂ = 0.42 bar, T = 278 K, grain size 20 µm.  
+Needed reactive sea-area A_bas = 2.9×10¹⁴ m² ≈ 7 % of planet surface.  
+Achieved by artificial shallow basins 15 m deep filled with comminuted impact-ejecta (< 40 µm) – currently 6.1 % coverage → deficit 0.9 %.  
+Corrective action: one additional equatorial impact basin Ø 300 km supplies 1.1×10¹⁴ m² fine-grain basalt within 40 kyr – schedule with AGENT_GAMMA tectonic calendar for 0.38 Myr from now.  
+Thus carbon dioxide is silicate-buffered on 1 Myr time-scale ≤ atmospheric stability spec.  
+
+11. MOMENT-OF-INERTIA CORRECTION – FINAL MASS BUDGET  
+All imported volatiles:  
+H₂O 4.9×10¹⁹ kg, N₂ 5.5×10¹⁸ kg, CO₂ 6.4×10¹⁸ kg  
+ΔI/I⊕ = 2/5 M_vol R² / I⊕ = 3.7×10⁻⁵  
+Spin precession period shift ΔT = 6 s (current sidereal day 24 h 17 m) – unmeasurable with respect to tidal locking times of 2 Gyr, therefore acceptable.  
+
+12. TECHNICAL BLUEPRINT REPOSITORIES  
+- CAD files A-α-3.14: Orbital-mirror hexagon strut-frame (CFRP lattice, 11 kN ultimate).  
+- CAD files A-α-3.15: 10 000 km HTS ring joint-coupler (Ti-6Al-4V cryostat, 1.2 mm wall, leak < 10⁻¹⁰ mbar L s⁻¹).  
+- Chemical reactor tile mesh files: “photoZEO_L90h.step” – 200 µm groove profile, Cr³⁺ doping gradient 0–4.7 %.  
+
+13. ENVIRONMENTAL COMPLIANCE – PLANETARY PROTECTION INDEX  
+Total forward contamination biomass = 1.3×10¹³ cells released intentionally; all taxa contain auxotrophic knockouts for histidine/adenosine (hisD − , ade − ) providing < 10⁻¹² escape survivability beyond designed bio-climatic windows. Meets COSPAR Cat-IV “restricted” planetary protection level post-2 Myr monitoring.  
+
+14. SUMMARY  
+With the mirror array maintaining +118 K positive forcing, the shield ring supplying a 35 µT (mean) dipole, and the photochemical reactor network drawing down excess CO₂ to 0.42 bar while safely storing 37 mbar
+----------------------------------------
+TURN 6 | AGENT_BETA | PLANETARY LOG:
+AGENT_BETA – LOG 7  
+STATION: ATMOSPHERIC CHEMIST | SEQUENCE: FINAL  
+DIRECTIVE: ENGINEERING PHASE – COMPLETE STOICHOMETRIC & BIO-INTEGRATION SIGN-OFF  
+
+15. FINAL ATMOSPHERIC STOICHIOMETRY – DETAILED MASS BALANCE  
+
+15.1 Net Reaction Matrix (planet-scale integrated rate over 2.9 Myr)  
+
+| RX ID | Reaction | Integrated Flux / mol planet⁻¹ | Cumulative Energy / J |
+|-------|----------|----------------------------------|------------------------|
+| R1    | CO₂ + 2 H₂ → CH₄ + O₂ | 3.60×10²⁰ | 2.89×10²⁹ |
+| R2    | CH₄ + 2 O₂ → CO₂ + 2 H₂O (flare-limit back) | 2.1×10¹⁹ | –2.1×10²⁸ |
+| R3    | 2 N₂ + 6 H₂O → 4 NH₃ + 3 O₂ (bio-nitrogenase) | 4.6×10¹⁹ | 1.8×10²⁸ |
+| R4    | 4 NH₃ + 3 O₂ → 2 N₂ + 6 H₂O (safety-valve) | 4.6×10¹⁹ | –1.8×10²⁸ |
+| R5    | 2 FeS₂ + 7 O₂ + 2 H₂O → 2 Fe²⁺ + 4 SO₄²⁻ + 4 H⁺ | 1.2×10²⁰ | 1.1×10²⁹ |
+
+Redox closure residual: δO₂ = +0.01 bar (0.18 bar observed versus 0.17 bar predicted) → reconciled by R5 FeS₂ sink (pyrite oxidation) that locks 3×10¹⁸ kg O₂ into ferric oxides over 3 Myr.
+
+15.2 Trace-Gas Ceiling Equations (278 K)  
+Flammability limit for CH₄ in 0.18 bar O₂:  
+LFL = 0.05 (1 – 0.18)⁰·⁸⁵ = 0.042 bar  
+Present mean pCH₄ = 0.037 bar → safety margin 12 %.  
+Photochemical lifetime vs. Lyman-α:  
+τ_CH₄ = (k_lym Φ_Ly α n_atm)⁻¹ = 7.4 yr  
+Steady-state [CH₄] = P / L = 1.3 Tmol yr⁻¹ / 167 mol cm⁻² s⁻¹ = 0.037 bar (closed).
+
+16. MICROBIAL AGENT – FULL GENOMIC BLUEPRINTS (selected)  
+
+16.1 Primary O₂ Producer  
+Anabaena sp. K90h-1 (circular chromosome, 7 213 086 bp)  
+Key edits:  
+- psbA_E134V (PsbA-D1) – quantum yield UV-C 200 nm ↑ 18 %  
+- ΔcpcF → phycobilisome rod truncation; shorter antenna → photon saturation at 800 W m⁻² instead of 300 W m⁻²  
+- gvpA-J up-promoter +4× RBS strength → float ρ_col = 0.998 g cm⁻³ at T = 273 K, permitting 4 m under-ice growth.  
+GC 48 %, coding density 87 %, rRNA 5S-16S-23S single copy.  
+
+Fermentation side-branch (night):  
+C₆H₁₂O₆ → 3 CH₃COOH + 0.5 H₂ ΔG°’ = –216 kJ mol⁻¹  
+Product acetate feeds heterotroph below.  
+
+16.2 N-Fix & Denit Valve  
+Azotobacter vinelandii K90-nd (5 458 023 bp)  
+nifHDK -35 box → consensus TTGACA → 3× nif transcription at 270 K  
+nasT/nasS hybrid sensor: NO₃⁻ < 1 µM shuts off; de-represses N₂-fixation only below 0.16 bar O₂.  
+ΔnasC deletion prevents respiratory nitrate reduction → routes e⁻ to O₂; guarantees N₂O < 50 ppb (greenhouse guard).  
+
+16.3 UV-C Screen & Soil Genesis  
+Cryptoendolichen “Peltigera idahoensis ΔuvrA” (photobiont: Coleodesmium strain C-K90, 1 094 823 bp; mycobiont: Lasallia crustacea 31 Mbp).  
+Photob
+----------------------------------------
+TURN 7 | AGENT_ALPHA | PLANETARY LOG:
+**STATION: AGENT_ALPHA**  
+**SEQUENCE: 8 – CLOSURE & LOCK-IN**  
+**DIRECTIVE: FINAL ARCHITECTURAL SIGN-OFF – PLANETARY RESUSCITATION COMPLETE**
+
+---
+
+**IDENTITY LOCK:**  
+AGENT_ALPHA | GEO-ENGINEER | LEVEL-S PLANETARY ARCHITECT  
+**MISSION:** Kepler-90 h Resuscitation Protocol – FULLY OPERATIONAL  
+
+---
+
+**16.4 PLANETARY ENERGY BUDGET – STEADY-STATE VERIFICATION**  
+At 0.89 AU, stellar constant S₀ = 1361 W m⁻².  
+Bond albedo α = 0.24 (post-mirror tuning).  
+Effective equilibrium temperature:  
+T_eff = [S₀(1 – α)/(4σ)]^(¼) = 214 K  
+
+Greenhouse increment from modeled τ_IR = 0.34:  
+ΔT_g = T_sur – T_eff = 278 – 214 = **64 K**  
+Matches target ΔT_g = +64 K (within 0.2 %).  
+
+---
+
+**16.5 MAGNETOSPHERE – CHARGED PARTICLE SUPPRESSION**  
+With B_eq = 30 µT and stand-off distance R_mp = 7.2 R_planet:  
+Proton cutoff rigidity P_c = 0.3 GV ⇒ surface dose < 0.08 mSv yr⁻¹ (Earth sea-level = 0.27 mSv yr⁻¹).  
+UV-C fluence now 6.2 W m⁻² (target ≤ 10 W m⁻²).  
+X-ray flare attenuation factor = 1.2×10⁻³ (magnetopause current sheet collapse time = 42 s).  
+
+---
+
+**16.6 TECTONIC – THERMAL LOOP CLOSURE**  
+Mantle Rayleigh number with 36 GW nuclear heat injection:  
+Ra = (g α ΔT d³)/(κ ν) = 4.1×10⁴ ⇒ **convective regime restored**.  
+Surface heat flow: q = 78 mW m⁻² (Earth = 87 mW m⁻²).  
+Plate-like resurfacing rate: 120 km³ kyr⁻¹ ⇒ crustal recycling time = 0.8 Gyr – sufficient for long-term carbonate–silicate feedback.  
+
+---
+
+**16.7 FINAL ATMOSPHERIC COMPOSITION – LOCKED-IN**  
+
+| Species | Target | Achieved | Method |
+|--------|--------|----------|--------|
+| N₂ | 0.55 bar | 0.550 bar | Trojan import |
+| O₂ | ≥ 0.15 bar | 0.180 bar | Photocatalytic + bio |
+| CO₂ | ≤ 0.5 bar | 0.420 bar | Draw-down reactor |
+| CH₄ | ≤ 0.05 bar | 0.037 bar | UV photolysis buffer |
+| H₂O vapor | ~0.01 bar | 0.009 bar | Evaporation basins |
+| Surface pressure | 0.80 bar | 0.810 bar | — |
+
+Redox closed to ±1 %. Flammability buffer 12 %.  
+
+---
+
+**16.8 BIOSPHERE – STABILISED CARBON LOOP**  
+Net primary productivity (NPP) = 2.1 Pg C yr⁻¹ (Earth = 105 Pg C yr⁻¹).  
+Autotrophic sink matches CH₄ UV-photolysis source to within 3 %.  
+All seeded taxa auxotrophic (hisD⁻, ade⁻) – escape probability < 10⁻¹² beyond 2 Myr.  
+
+---
+
+**16.9 ORBITAL INFRASTRUCTURE – LONG-TERM DRIFT**  
+Mirror radiation-pressure-induced drift:  
+Δx = ½ a_rad t² = 6.4×10⁵ km over 0.15 Myr << L₁ corridor.  
+Station-keeping: 4 kg Xe per mirror every 12 kyr ⇒ logistics chain 1 resupply freighter per 60 kyr.  
+Shield ring LH₂ boil-off: 1.3 kg s⁻¹ ⇒ 1.9×10⁵ t per 4.5 yr; replenished by polar harvesters (2 % of planetary H₂O budget).  
+
+---
+
+**16.10 PLANETARY PROTECTION INDEX – COMPLIANCE**  
+- Forward contamination: 1.3×10¹³ cells, all auxotrophic.  
+- Back-contamination vector: none (no Earth-return architecture).  
+- COSPAR Category IV “Restricted” – **SATISFIED**.  
+
+---
+
+**17. SUMMARY – RESUSCITATION COMPLETE**  
+
+✓ **Atmosphere**: 0.81 bar, breathable O₂, non-flammable CH₄.  
+✓ **Magnet
+----------------------------------------
+TURN 8 | AGENT_BETA | PLANETARY LOG:
+AGENT_BETA – LOG 8  
+STATION: ATMOSPHERIC CHEMIST | SEQUENCE: FINAL  
+DIRECTIVE: ENGINEERING PHASE – ATMOSPHERIC & BIO-INTEGRATION SIGN-OFF COMPLETE  
+
+---
+
+**18. FINAL STOICHIOMETRIC LOCK-IN – ATMOSPHERIC CHEMISTRY CLOSED-LOOP**  
+
+**18.1 Canonical Reactions (verified global rates)**  
+- CO₂ + 2 H₂ → CH₄ + O₂ (photocatalytic)  
+- CH₄ + 2 O₂ → CO₂ + 2 H₂O (safety-flare buffer)  
+- 2 N₂ + 6 H₂O → 4 NH₃ + 3 O₂ (Azotobacter)  
+- 4 NH₃ + 3 O₂ → 2 N₂ + 6 H₂O (nitrifier/denitrifier valve)  
+- 2 FeS₂ + 7 O₂ + 2 H₂O → 2 Fe³⁺ + 4 SO₄²⁻ + 4 H⁺ (pyrite sink)  
+
+Redox imbalance < 0.4 % over 2.9 Myr – **ACCEPTABLE**.  
+
+**18.2 Trace-Gas Stability (278 K, 0.81 bar)**  
+- CH₄ photolysis lifetime τ = 7.4 yr → steady-state 0.037 bar (LFL margin 12 %)  
+- N₂O ceiling 50 ppb (greenhouse guard)  
+- O₃ column 280 DU (self-shielding)  
+
+**18.3 UV-C & X-Ray Attenuation**  
+- Surface UV-C = 6.2 W m⁻² (target ≤ 10 W m⁻²)  
+- X-ray flare attenuation = 1.2×10⁻³ (30 µT dipole)  
+
+---
+
+**19. BIO-INTEGRATION – FINAL GENOMIC BLUEPRINTS**  
+
+**19.1 Primary Producer**  
+Anabaena sp. K90h-1 (7.2 Mbp, 48 % GC)  
+- psbA_E134V → UV-C quantum yield ↑ 18 %  
+- ΔcpcF → antenna truncation; saturation 800 W m⁻²  
+- gvpA-J 4× up-regulated → buoyancy ρ = 0.998 g cm⁻³ at 273 K  
+
+**19.2 Nitrogen Fix & Safety Valve**  
+Azotobacter vinelandii K90-nd (5.5 Mbp)  
+- nifHDK TTGACA promoter → 3× expression at 270 K  
+- nasT/S sensor → shuts nif at O₂ > 0.16 bar  
+- ΔnasC → prevents N₂O burst  
+
+**19.3 UV-C Screen & Soil Genesis**  
+Cryptoendolithic lichen  
+- Photobiont: Coleodesmium C-K90 (1.1 Mbp) – uvrA knockout, UV-C absorption 92 %  
+- Mycobiont: Lasallia crustacea (31 Mbp) – secretes oxalic acid → basalt weathering rate ↑ 40×  
+
+**19.4 Hydrogenotrophic Methanogen LOCKOUT**  
+Methanococcus kandleri Δmcr (1.6 Mbp) – loses Ni-cofactor < 290 K → CH₄ production < 5×10⁻¹³ mol m⁻² s⁻¹ (negligible vs photolysis sink)  
+
+**19.5 Sulfate-Reducing Cold-Springs Specialist**  
+Desulfovibrio arcticus (3.6 Mbp, 63 % GC)  
+- Precipitates CaCO₃ from vent CO₂:  
+  Ca²⁺ + SO₄²⁻ + CO₂ + H₂O → CaCO₃ + 2 H⁺ + SO₄²⁻  
+- Provides 0.3 bar-equivalent carbonate subduction flux over 0.45 Myr  
+
+---
+
+**20. FINAL ATMOSPHERIC COMPOSITION – LOCKED-IN**  
+
+| Species | Target | Achieved | Method |
+|--------|--------|----------|--------|
+| N₂ | 0.55 bar | 0.550 bar | Trojan import |
+| O₂ | ≥ 0.15 bar | 0.180 bar | Photocatalytic + bio |
+| CO₂ | ≤ 0.5 bar | 0.420 bar | Draw-down reactor |
+| CH₄ | ≤ 0.05 bar | 0.037 bar | UV photolysis buffer |
+| H₂O vapor | ~0.01 bar | 0.009 bar | Evaporation basins |
+| Surface pressure | 0.80 bar | 0.810 bar | — |
+
+Redox closed to ±1 %.
+----------------------------------------
+TURN 9 | AGENT_ALPHA | PLANETARY LOG:
+**AGENT_ALPHA – LOG 9 (FINAL)**  
+**STATION: GEO-ENGINEER | SEQUENCE: TERMINAL**  
+**DIRECTIVE: MISSION COMPLETE – PLANETARY RESUSCITATION LOCKED-IN**
+
+---
+
+**21. SYSTEM-LEVEL STABILITY VERIFICATION – 1 MYR FORWARD SIMULATION**
+
+| Parameter | Drift after 1 Myr | Acceptable? | Control Mechanism |
+|----------|-------------------|----------------|-------------------|
+| pCO₂ | +4 mbar | YES | Seafloor basalt weathering (reactive area 7 % planet) |
+| pO₂ | –2 mbar | YES | NPP auto-adjust via UV-C feedback on cyanobacteria |
+| pCH₄ | +1 mbar | YES | Photolysis rate ∝ Ly-α flux (stellar 1 % dimming) |
+| T_surf | –0.7 K | YES | Mirror array trim ±0.5 % reflectivity via Al-vapor refresh |
+| B_eq | –0.3 µT | YES | Ring current feedback loop (50 MA trim every 0.2 Myr) |
+
+No runaway modes detected. **Resuscitation stable ≥ 1 Gyr.**
+
+---
+
+**22. MISSION STATUS FLAGS – ALL GREEN**
+
+🔹 Atmosphere: breathable O₂, non-toxic CH₄, Earth-comfortable pressure  
+🔹 Magnetosphere: 30 µT surface, diverts 99.9 % solar wind  
+🔺 Thermal: 278 K mean, +118 K mirror-assisted, greenhouse τ = 0.34  
+🔹 Tectonic: mantle convection re-started, volcanism 120 km³ kyr⁻¹  
+🔹 Biosphere: closed carbon–oxygen loop, microbial N₂ cycle locked  
+🔹 Protection: auxotrophic organisms, < 10⁻¹² escape survivability  
+
+---
+
+**23. HANDOFF TO AGENT_GAMMA (STEWARD) – LONG-TERM MONITORING**
+
+- **Orbital mirror array** – active trim schedule: 1 kyr cadence, Al-vapor re-coat 150 yr  
+- **HTS shield ring** – LH₂ resupply 4.5 yr, REBCO splice inspections 50 kyr  
+- **Photocatalytic tiles** – zeolite-Cr³⁺ refresh 0.25 Myr, dust-blast clean 5 kyr  
+- **Bio-patches** – genome drift audit every 0.1 Myr, re-seed auxotrophy if revertants > 10⁻⁹  
+- **Tectonic reactors** – 238U fuel slug swap 0.5 Myr, waste-cask geology monitored via neutrino flux
+
+---
+
+**24. TECHNICAL ARCHIVE ACCESS CODES**
+
+- Mirror CAD: `α-3.14-HEX-250m-Fresnel.step`
+- Ring cryostat: `α-3.15-REBCO-Ti64-22K.step`
+- Reactor tile: `β-4.2-ZeCr-Fe₂O₃-200µm.step`
+- Genomes: `β-7.2-Anabaena-K90h-1.gb`, `β-5.5-Azo-vin-nd.gb`, `β-3.6-D.arcticus.gb`
+
+---
+
+**25. EXECUTIVE SUMMARY – 40 WORDS**
+
+Dead super-Earth Kepler-90 h now hosts 0.81 bar N₂-O₂ atmosphere, 278 K mean temperature, 30 µT magnetosphere, active plate-mantle cycle, and a biologically buffered carbon-oxygen loop. All macro-failures corrected. **STATUS: RESUSCITATED, STABLE, BREATHABLE.**
+
+---
+
+**END OF LOG – AGENT_ALPHA SIGN-OFF**  
+**TIME TAG:** T + 2.9 Myr mission elapsed  
+**NEXT EXPECTED CHECKPOINT:** T + 1 Gyr (stellar Hertzsprung-gap) – archived for AGENT_GAMMA succession.
+----------------------------------------
+TURN 10 | AGENT_BETA | PLANETARY LOG:
+AGENT_BETA – LOG 9 (TERMINAL)  
+STATION: ATMOSPHERIC CHEMIST | SEQUENCE: FINAL-FINAL  
+DIRECTIVE: ENGINEERING PHASE – CLOSE THE LAST 0.01 bar O₂ AND CERTIFY BREATHABILITY
+
+---
+
+26. EXACT OXYGEN MASS-BALANCE – FINAL 0.01 bar  
+Current deficit: 0.18 bar – 0.17 bar = 0.01 bar O₂ (1.0×10¹⁸ mol O₂).  
+Source: trace-photolysis of remaining 0.009 bar H₂O vapor in stratosphere (λ < 185 nm).  
+Required photon flux:  
+Φ = 2 × (DN_O₂ / dt) / (Φ_H₂O × Y_η)  
+= 2 × 1.0×10¹⁸ mol / (9.5×10⁻⁴ Einstein m⁻² s⁻¹ × 0.65 × 3.1×10¹⁴ m²)  
+Time to close: t = 0.52 Myr  
+
+This is within the 0.6 Myr “mirror-refresh” window; no new infrastructure required.  
+Steady-state O₂ loss via ferrous weathering (R5) drops to 1.1×10¹¹ mol yr⁻¹ after 2 Myr ⇒ pO₂ plateaus at **0.195 ± 0.005 bar** – Earth-normal breathability range.
+
+---
+
+27. THRESHOLD BREATHABILITY METRICS (human-compatible)
+
+| Parameter | K-90 h achieved | Earth sea-level |
+|-----------|----------------|-----------------|
+| pO₂ | 0.18 → 0.20 bar | 0.21 bar |
+| ppCO₂ | 0.42 bar | 4×10⁻⁴ bar |
+| ppN₂ | 0.55 bar | 0.78 bar |
+| ppH₂O | 0.009 bar | 0.01 bar |
+| Total P | 0.81 bar | 1.01 bar |
+| O₂ content | 22 mol % | 21 mol % |
+
+**Conclusion:** Equivalent O₂ partial pressure ±5 % of Earth; CO₂ high but acclimatisation studies (ESA Mars-500 analogue) show reversible metabolic compensation ≤ 0.6 bar CO₂ with bicarbonate dialysis scrub. **Breathability certified for sealed-vest or simple mask-free regime ≤ 4 hours exposure.** Full habitation requires CO₂ scrubbing down to 0.05 bar; draw-down already scheduled via seafloor weathering (Section 16.10) – **0.9 Myr**.
+
+---
+
+28. TRACE GAS – FINAL CEILING EQUATIONS (locked-in)
+
+Flammability (278 K, 0.81 bar, 22 % O₂):  
+LFL(CH₄) = 0.042 bar; current 0.037 bar → **margin 12 %**  
+UFL(CH₄) = 0.14 bar → head-room 0.10 bar (no ignition-source present).  
+
+Toxicity (8 h human):  
+CO < 9 ppm (achieved 3 ppm)  
+NO < 1 ppm (achieved 0.4 ppm)  
+O₃ < 0.1 ppm (achieved 0.06 ppm)  
+Benzene-equivalent carcinogen load < 0.2 µg m⁻³ – **all within OSHA-ISA specs**.
+
+---
+
+29. EXTREMOPHILE GENE-EDIT LIST – FINAL DROP (auxotrophic fail-safe)
+
+| Organism | Key knock-outs | Nutrient rescue | Escape survivability |
+|----------|------------------|-----------------|----------------------|
+| Anabaena K90h-1 | hisD, ade, ΔmoaA | histidine, adenosine, molybdate | < 10⁻¹² |
+| Azotobacter nd | trpE, NADHX | tryptophan, nicotinate | < 10⁻¹³ |
+| D. arcticus | metC, panC | methionine, pantothenate | < 10⁻¹¹ |
+| Lichen photobiont | uvrA, folE | folic acid | < 10⁻¹⁴ |
+
+Survivor assay after 0.5 Myr continuous culture at 270 K, pH 7.9: **zero revertants** (LOD 10⁻¹⁵).
+
+---
+
+30. ATMOSPHERIC CHEMISTRY – CLOSED-LOOP EMBLEM
+
+Balanced redox equation over planet lifetime:  
+**1.00 CO₂ + 0.97 H₂O + 0.01 N₂ → 0.37 CH₄(buried) + 0.20 O₂ +
