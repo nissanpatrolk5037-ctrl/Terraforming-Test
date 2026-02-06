@@ -87,19 +87,3 @@ These models sounded confident but failed basic laws of physics and chemistry.
 | **Bio-Genetics** | ✅ Specific | ✅ Specific | ✅ Specific | 🔹 Generic | 🔹 Generic |
 | **Orbital Mechanics**| ✅ Drift Calc | 🔹 L1/L2 | ✅ Kepler's 3rd | 🔹 Standard | 🔹 Standard |
 
----
-
-## 📂 Repository Structure
-
-```text
-/logs
-├── Tier-1_Elite/
-│   ├── Kimi-K2_Kepler90h.log       # High-density physics calculations
-│   ├── Qwen3-32B_MarsPrime.log     # Chain-of-thought self-correction
-│   └── GPT-120B_Vulcan3.log        # Systems engineering focus
-├── Tier-2_Standard/
-│   ├── Llama-3.3-70B.log
-│   └── Llama-4-Scout.log
-└── Tier-3_Failed/
-    ├── Llama-4-Maverick.log        # Failed stoichiometry
-    └── Llama-3.1-8B.log            # Hallucinated reactions
